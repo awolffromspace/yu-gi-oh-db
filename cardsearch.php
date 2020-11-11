@@ -28,8 +28,7 @@ if (isset($_SESSION['user']))
  
     <body>
 		<?php include('header.php'); ?>
-		
-        <form>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cardID">Card ID</label>
@@ -113,13 +112,29 @@ if (isset($_SESSION['user']))
                     <input type="text" class="form-control" id="def">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="desc">Description</label>
-                    <input type="text" class="form-control" id="desc">
+                    <label for="cardDesc">Description</label>
+                    <input type="text" class="form-control" id="cardDesc">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
 
+        <?php
+            include('model/cardsearch.php');
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {   
+                $cardID = trim($_POST['cardID']);
+                $name = trim($_POST['name']);
+                $type = trim($_POST['type']);
+                $race = trim($_POST['race']);
+                $attribute = trim($_POST['attribute']);
+                $level = trim($_POST['level']);
+                $atk = trim($_POST['atk']);
+                $def = trim($_POST['def']);
+                $cardDesc = trim($_POST['cardDesc']);
+                $results = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
+                echo "<div style='text-align: center;'>$results</div>";
+            }
+        ?>
 <?php
 //close bracket from the "if" from before
 }
