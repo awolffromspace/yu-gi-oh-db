@@ -1,7 +1,7 @@
 <?php
     function cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc) {
         require('connectdb.php');
-        $query = "SELECT * FROM Card_name WHERE type = :type";
+        $query = "SELECT * FROM Card_name WHERE type = ':type'";
 
         $statement = $db->prepare($query);
 
