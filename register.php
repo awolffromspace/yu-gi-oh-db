@@ -22,11 +22,10 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	</head>
 
-	<body class="pathimage">
-		<div class="overlay"></div>
+	<body>
 		<div class="container">
 		
-			<h2>Log in</h2>
+			<h2>Register</h2>
 
 			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="mainform"> 
 				<div class="form-group">
@@ -43,41 +42,34 @@
 					<span class="alert-danger" id="msg_password"></span>
 				</div>
 
-				<input type="submit" value="Log in" class="btn btn-dark" />    
+				<input type="submit" value="Register" class="btn btn-dark" />    
 			</form>
+			
 			</br>
-			<a href="register.php">
-				<input type="submit" value="Register" class="btn btn-outline-secondary" />
+		
+			<a href="login.php">
+				<input type="submit" value="Log In" class="btn btn-outline-secondary" />
 			</a>
 		</div>
 		
-		<?php
-			include('model/loginFormHandler.php'); // authenticate function
-			// The isset makes sure that there is something in the text fields
-			/*
-			if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
-				$username = trim($_COOKIE['username']);
-				$password = trim($_COOKIE['password']);
-				$authorized = authenticate($username, $password);
-				if($authorized) {
-					session_start();
-					$_SESSION['user'] = $username;
-				}
-				else
-					echo "<div style='text-align: center;' class='bg-danger text-white'>The username or password is incorrect</div>";
-			}
 
-			else */ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {	
+		
+		<?php
+			
+			include('model/registerFormHandler.php');
+			
+			if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
+				
 				$username = trim($_POST['username']);
 				$password = trim($_POST['password']);
 				$authorized = authenticate($username, $password);
-				if($authorized) {
-					session_start();
-					$_SESSION['user'] = $username;
-					header('Location: profile.php');
+				if($authorized){
+					echo "<div style='text-align: center;' class='bg-success text-white'>You've successfully registered</div>";
 				}
-				else
-					echo "<div style='text-align: center;' class='bg-danger text-white'>The username or password is incorrect</div>";
+				//either the username is in use or it has non-alphanumeric characters
+				else{
+					echo "<div style='text-align: center;' class='bg-danger text-white'>That username is invalid. Please try another</div>";
+				}
 			}
 		?>
 	</body>
