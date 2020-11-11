@@ -123,7 +123,6 @@ if (isset($_SESSION['user']))
             include('model/cardsearch.php');
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $cardID = trim($_POST['cardID']);
-                echo "<p>$cardID</p>";
                 $name = trim($_POST['name']);
                 $type = trim($_POST['type']);
                 $race = trim($_POST['race']);
@@ -133,9 +132,9 @@ if (isset($_SESSION['user']))
                 $def = trim($_POST['def']);
                 $cardDesc = trim($_POST['cardDesc']);
                 $cards = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
-                //foreach ($cards as $card) {
-                //    echo $card['name'];
-                //}
+                foreach ($cards as $card) {
+                    echo $card['name'];
+                }
             }
         ?>
 <?php
