@@ -132,7 +132,7 @@ if (isset($_SESSION['user']))
                 $def = trim($_POST['def']);
                 $cardDesc = trim($_POST['cardDesc']);
                 $results = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
-                echo "<div style='text-align: center;'>$results</div>";
+                echo "<div style='text-align: center;'>test</div>";
             }
         ?>
 <?php
