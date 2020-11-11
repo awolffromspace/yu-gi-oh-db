@@ -131,8 +131,10 @@ if (isset($_SESSION['user']))
                 $atk = trim($_POST['atk']);
                 $def = trim($_POST['def']);
                 $cardDesc = trim($_POST['cardDesc']);
-                $results = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
-                echo "<div style='text-align: center;'>test</div>";
+                $cards = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
+                <?php foreach ($cards as $card): ?>
+                    <?php echo $card['name']; ?>
+                <?php endforeach; ?>
             }
         ?>
 <?php
