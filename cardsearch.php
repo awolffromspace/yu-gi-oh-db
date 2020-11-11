@@ -27,7 +27,7 @@ if (isset($_SESSION['user']))
 ?>
  
     <body>
-		<?php include('header.php'); require('model/connectdb.php'); ?>
+		<?php include('header.php'); ?>
 		
         <form>
             <div class="form-row">
