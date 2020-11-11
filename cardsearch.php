@@ -121,10 +121,10 @@ if (isset($_SESSION['user']))
 
         <?php
             include('model/cardsearch.php');
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {   
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                echo "<p>test</p>";
                 $cardID = trim($_POST['cardID']);
                 $name = trim($_POST['name']);
-                echo "<p>$name</p>";
                 $type = trim($_POST['type']);
                 $race = trim($_POST['race']);
                 $attribute = trim($_POST['attribute']);
