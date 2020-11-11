@@ -32,7 +32,7 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cardID">Card ID</label>
-                    <input type="text" class="form-control" id="cardID" name="cardID">
+                    <input type="text" class="form-control" id="cardID" name="cardID" placeholder="">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="name">Name</label>
@@ -105,15 +105,15 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="atk">ATK</label>
-                    <input type="text" class="form-control" id="atk" name="atk">
+                    <input type="text" class="form-control" id="atk" name="atk" placeholder="">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="def">DEF</label>
-                    <input type="text" class="form-control" id="def" name="def">
+                    <input type="text" class="form-control" id="def" name="def" placeholder="">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="cardDesc">Description</label>
-                    <input type="text" class="form-control" id="cardDesc" name="cardDesc">
+                    <input type="text" class="form-control" id="cardDesc" name="cardDesc" placeholder="">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
