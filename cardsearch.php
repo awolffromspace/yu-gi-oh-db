@@ -31,17 +31,17 @@ if (isset($_SESSION['user']))
 		
         <form>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="cardID">Card ID</label>
-                    <input type="text" class="form-control" id="cardID" placeholder="id">
+                    <input type="text" class="form-control" id="cardID">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="name">Card Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="name">
+                    <input type="text" class="form-control" id="name">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="type">Card Type</label>
-                    <input type="text" class="form-control" id="type" placeholder="type">
+                    <input type="text" class="form-control" id="type">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
