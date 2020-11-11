@@ -32,11 +32,11 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cardID">Card ID</label>
-                    <input type="text" class="form-control" id="cardID">
+                    <input type="text" class="form-control" id="cardID" name="cardID">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="type">Type</label>
@@ -53,7 +53,7 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="race">Race</label>
-                    <select class="form-control" id="race">
+                    <select class="form-control" id="race" name="race">
                         <option>Aqua</option>
                         <option>Beast</option>
                         <option>Beast-Warrior</option>
@@ -78,7 +78,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="attribute">Attribute</label>
-                    <select class="form-control" id="attribute">
+                    <select class="form-control" id="attribute" name="attribute">
                         <option>DARK</option>
                         <option>EARTH</option>
                         <option>FIRE</option>
@@ -89,7 +89,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="level">Level</label>
-                    <select class="form-control" id="level">
+                    <select class="form-control" id="level" name="level">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -105,15 +105,15 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="atk">ATK</label>
-                    <input type="text" class="form-control" id="atk">
+                    <input type="text" class="form-control" id="atk" name="atk">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="def">DEF</label>
-                    <input type="text" class="form-control" id="def">
+                    <input type="text" class="form-control" id="def" name="def">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="cardDesc">Description</label>
-                    <input type="text" class="form-control" id="cardDesc">
+                    <input type="text" class="form-control" id="cardDesc" name="cardDesc">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
