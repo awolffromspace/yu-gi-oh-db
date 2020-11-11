@@ -1,7 +1,7 @@
 <?php
     function cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc) {
         require('connectdb.php');
-        $query = "SELECT * FROM Card_name WHERE name=':name'";
+        $query = "SELECT * FROM Card_name WHERE name = :name";
 
         $statement = $db->prepare($query);
 
@@ -12,7 +12,7 @@
         
         $statement->execute();
         
-        $results = $statement->fetch();
+        $results = $statement->fetchAll();
         $statement->closeCursor();
         return $results;
     }
