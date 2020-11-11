@@ -36,12 +36,85 @@ if (isset($_SESSION['user']))
                     <input type="text" class="form-control" id="cardID">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="name">Card Name</label>
+                    <label for="name">Name</label>
                     <input type="text" class="form-control" id="name">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="type">Card Type</label>
-                    <input type="text" class="form-control" id="type">
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type">
+                        <option>Effect Monster</option>
+                        <option>Flip Effect Monster</option>
+                        <option>Fusion Monster</option>
+                        <option>Normal Monster</option>
+                        <option>Spell Card</option>
+                        <option>Trap Card</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="race">Race</label>
+                    <select class="form-control" id="race">
+                        <option>Aqua</option>
+                        <option>Beast</option>
+                        <option>Beast-Warrior</option>
+                        <option>Dinosaur</option>
+                        <option>Dragon</option>
+                        <option>Fairy</option>
+                        <option>Fiend</option>
+                        <option>Fish</option>
+                        <option>Insect</option>
+                        <option>Machine</option>
+                        <option>Plant</option>
+                        <option>Pyro</option>
+                        <option>Reptile</option>
+                        <option>Rock</option>
+                        <option>Sea Serpent</option>
+                        <option>Spellcaster</option>
+                        <option>Thunder</option>
+                        <option>Warrior</option>
+                        <option>Winged Beast</option>
+                        <option>Zombie</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="attribute">Attribute</label>
+                    <select class="form-control" id="attribute">
+                        <option>DARK</option>
+                        <option>EARTH</option>
+                        <option>FIRE</option>
+                        <option>LIGHT</option>
+                        <option>WATER</option>
+                        <option>WIND</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="level">Level</label>
+                    <select class="form-control" id="level">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="atk">ATK</label>
+                    <input type="text" class="form-control" id="atk">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="def">DEF</label>
+                    <input type="text" class="form-control" id="def">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="desc">Description</label>
+                    <input type="text" class="form-control" id="desc">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
