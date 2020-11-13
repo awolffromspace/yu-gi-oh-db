@@ -41,6 +41,14 @@
 					</div>
 					<span class="alert-danger" id="msg_password"></span>
 				</div>
+				
+				<div class="form-group">
+					<label for="email">Email: </label>
+					<div class="input-group mb-2">
+						<input type="email" id="email" class="form-control" placeholder="Enter Email" name="email"/>
+					</div>
+					<span class="alert-danger" id="msg_email"></span>
+				</div>
 
 				<input type="submit" value="Register" class="btn btn-dark" />    
 			</form>
@@ -58,11 +66,12 @@
 			
 			include('model/registerFormHandler.php');
 			
-			if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
+			if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
 				
 				$username = trim($_POST['username']);
 				$password = trim($_POST['password']);
-				$authorized = authenticate($username, $password);
+				$email = trim($_POST['email']);
+				$authorized = authenticate($username, $password, $email);
 				if($authorized){
 					echo "<div style='text-align: center;' class='bg-success text-white'>You've successfully registered</div>";
 				}

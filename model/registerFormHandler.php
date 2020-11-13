@@ -1,11 +1,8 @@
 <?php
-    // author: Rowan Dakota
+    // author: Rowan Dakota (based off of code by Peter Chen)
     
     /** Authenticates the login form by checking for the given username and password in the database */
-    function authenticate($user, $pwd) {
-        // if the values do not contain only alphanumeric data, return false
-        if(!ctype_alnum($user) || !ctype_alnum($pwd))
-            return false;
+    function authenticate($user, $pwd, $email) {
 
         require('connectdb.php');
 		
@@ -34,6 +31,32 @@
 					
 			$result = $statement->execute();
 
+			if(!$result) {
+				print_r($statement->errorInfo());
+				$statement->closeCursor();
+				exit;
+			}
+	
+			//insert the email into the User_emails database
+			$query = "SELECT user_ID FROM `Users` WHERE `username`=:user AND `pswd`=:pswd";
+			
+			//get the user's ID
+			$hashPwd = md5($pwd); // hash the password
+
+			$statement = $db->prepare($query);
+			$statement->bindValue(':user', $user);
+			$statement->bindValue(':pswd', $hashPwd);
+			$statement->execute();
+			$result = $statement->fetch();
+			
+			//insert email
+			$query = "INSERT INTO `User_emails` (`user_ID`, `emails`) VALUES(:ID, :email)";
+
+			$statement = $db->prepare($query);
+			$statement->bindValue(':ID', $result[0]);
+			$statement->bindValue(':email', $email);
+			$result = $statement->execute();
+			
 			if(!$result) {
 				print_r($statement->errorInfo());
 				$statement->closeCursor();
