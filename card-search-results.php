@@ -21,7 +21,6 @@
 
 <!--checks to see if the user is logged in-->
 <?php
-ob_start();
 session_start();
 if (isset($_SESSION['user']))
 {
