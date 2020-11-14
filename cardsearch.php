@@ -137,7 +137,9 @@ if (isset($_SESSION['user']))
                 $card_desc = trim($_POST['card_desc']);
                 $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
                 foreach ($cards as $card) {
+                    echo "<p>";
                     echo $card['name'];
+                    echo "</p>";
                 }
             }
         ?>

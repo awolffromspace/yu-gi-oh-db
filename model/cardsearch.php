@@ -79,9 +79,6 @@
             $statement->bindValue(':card_desc', $card_desc, PDO::PARAM_STR);
         }
 
-        echo $query;
-        echo "\n";
-
         $statement->execute();
 
         $results = $statement->fetchAll();
