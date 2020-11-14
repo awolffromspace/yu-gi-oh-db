@@ -74,6 +74,7 @@
 				if($authorized) {
 					session_start();
 					$_SESSION['user'] = $username;
+					$_SESSION['password']=$password;
 					header('Location: profile.php');
 				}
 				else
