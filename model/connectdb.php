@@ -41,8 +41,7 @@ $db = "";
 /** connect to the database **/
 try 
 {
-   $db = new PDO($dsn, $username, $password);   
-   echo "<p></p>";
+   $db = new PDO($dsn, $username, $password);
 }
 catch (PDOException $e)     // handle a PDO exception (errors thrown by the PDO library)
 {
