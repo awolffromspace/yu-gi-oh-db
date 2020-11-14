@@ -6,14 +6,14 @@
         $statement = $db->prepare($query);
 
         $statement->bindValue(':card_ID', intval($card_ID), PDO::PARAM_INT);
-        $statement->bindValue(':name', $name, PDO::PARAM_STR);
-        $statement->bindValue(':type', $type, PDO::PARAM_STR);
-        $statement->bindValue(':race', $race, PDO::PARAM_STR);
-        $statement->bindValue(':card_attribute', $card_attribute, PDO::PARAM_STR);
-        $statement->bindValue(':level', intval($level), PDO::PARAM_INT);
-        $statement->bindValue(':atk', intval($atk), PDO::PARAM_INT);
-        $statement->bindValue(':def', intval($def), PDO::PARAM_INT);
-        $statement->bindValue(':card_desc', $card_desc, PDO::PARAM_STR);
+        //$statement->bindValue(':name', $name, PDO::PARAM_STR);
+        //$statement->bindValue(':type', $type, PDO::PARAM_STR);
+        //$statement->bindValue(':race', $race, PDO::PARAM_STR);
+        //$statement->bindValue(':card_attribute', $card_attribute, PDO::PARAM_STR);
+        //$statement->bindValue(':level', intval($level), PDO::PARAM_INT);
+        //$statement->bindValue(':atk', intval($atk), PDO::PARAM_INT);
+        //$statement->bindValue(':def', intval($def), PDO::PARAM_INT);
+        //$statement->bindValue(':card_desc', $card_desc, PDO::PARAM_STR);
 
         echo $query;
         echo $card_ID;
