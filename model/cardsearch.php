@@ -13,11 +13,11 @@
         } else {
             $query = $query." AND name=:name";
         }
-        // if ($type == "type") {
-        //     $query = $query." AND type=type";
-        // } else {
-        //     $query = $query." AND type=:type";
-        // }
+        if ($type == "type") {
+            $query = $query." AND type=type";
+        } else {
+            $query = $query." AND type=:type";
+        }
         if ($race == "race") {
             $query = $query." AND race=race";
         } else {
@@ -53,7 +53,7 @@
 
         $statement->bindValue(':card_ID', intval($card_ID), PDO::PARAM_INT);
         $statement->bindValue(':name', $name, PDO::PARAM_STR);
-        // $statement->bindValue(':type', $type, PDO::PARAM_STR);
+        $statement->bindValue(':type', $type, PDO::PARAM_STR);
         $statement->bindValue(':race', $race, PDO::PARAM_STR);
         $statement->bindValue(':card_attribute', $card_attribute, PDO::PARAM_STR);
         $statement->bindValue(':level', intval($level), PDO::PARAM_INT);
