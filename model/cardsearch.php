@@ -15,6 +15,8 @@
         $statement->bindValue(':def', $def);
         $statement->bindValue(':card_desc', $card_desc);
 
+        echo $statement;
+
         $statement->execute();
 
         $results = $statement->fetchAll();
