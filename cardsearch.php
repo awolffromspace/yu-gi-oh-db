@@ -39,9 +39,9 @@ if (isset($_SESSION['user']))
                     <input type="text" class="form-control" id="name" name="name" value="name">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="card_type">Type</label>
-                    <select class="form-control" id="card_type">
-                        <option value="card_type" selected hidden>Any</option>
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type">
+                        <option value="type" selected hidden>Any</option>
                         <option>Effect Monster</option>
                         <option>Flip Effect Monster</option>
                         <option>Fusion Monster</option>
@@ -128,14 +128,14 @@ if (isset($_SESSION['user']))
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $card_ID = trim($_POST['card_ID']);
                 $name = trim($_POST['name']);
-                $card_type = trim($_POST['card_type']);
+                $type = trim($_POST['type']);
                 $race = trim($_POST['race']);
                 $card_attribute = trim($_POST['card_attribute']);
                 $level = trim($_POST['level']);
                 $atk = trim($_POST['atk']);
                 $def = trim($_POST['def']);
                 $card_desc = trim($_POST['card_desc']);
-                $cards = cardSearch($card_ID, $name, $card_type, $race, $card_attribute, $level, $atk, $def, $card_desc);
+                $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
                 foreach ($cards as $card) {
                     echo $card['name'];
                 }

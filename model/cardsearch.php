@@ -1,5 +1,5 @@
 <?php
-    function cardSearch($card_ID, $name, $card_type, $race, $card_attribute, $level, $atk, $def, $card_desc) {
+    function cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc) {
         require('connectdb.php');
         $query = "SELECT * FROM Cards NATURAL JOIN Card_name NATURAL JOIN Card_image NATURAL LEFT JOIN Monster WHERE";
 
@@ -13,11 +13,11 @@
         } else {
             $query = $query." AND name=:name";
         }
-        if ($card_type == "card_type") {
-            $query = $query." AND type=type";
-        } else {
-            $query = $query." AND type=:type";
-        }
+        // if ($type == "type") {
+        //     $query = $query." AND type=type";
+        // } else {
+        //     $query = $query." AND type=:type";
+        // }
         if ($race == "race") {
             $query = $query." AND race=race";
         } else {
@@ -53,7 +53,7 @@
 
         $statement->bindValue(':card_ID', intval($card_ID), PDO::PARAM_INT);
         $statement->bindValue(':name', $name, PDO::PARAM_STR);
-        $statement->bindValue(':type', $card_type, PDO::PARAM_STR);
+        // $statement->bindValue(':type', $type, PDO::PARAM_STR);
         $statement->bindValue(':race', $race, PDO::PARAM_STR);
         $statement->bindValue(':card_attribute', $card_attribute, PDO::PARAM_STR);
         $statement->bindValue(':level', intval($level), PDO::PARAM_INT);
