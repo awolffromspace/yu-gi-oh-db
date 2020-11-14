@@ -147,7 +147,7 @@ function getNewCommentID()
 function commentUser(&$comment, $user)
 {
 	global $db;
-	$commentID=getNewCommentID()[0]['comment_ID']+1;
+	$commentID=getNewCommentID()[0]['comment_ID'];
     $query = "INSERT INTO Comments_user (user_ID, comment_ID, comment) VALUES($user, $commentID, '$comment');";
     $statement = $db->prepare($query);
     $statement->execute();
@@ -157,7 +157,7 @@ function commentUser(&$comment, $user)
 function commentCard(&$comment, $card)
 {
 	global $db;
-	$commentID=getNewCommentID()[0]['comment_ID'];
+	$commentID=getNewCommentID()[0]['comment_ID']+1;
     $query = "INSERT INTO Comments_card (card_ID, comment_ID, comment) VALUES($card, $commentID, '$comment');";
     $statement = $db->prepare($query);
     $statement->execute();
@@ -168,7 +168,7 @@ function getAllComments($card)
 {
     global $db;
 
-    $query = "SELECT * FROM Comments_card WHERE card_ID='$card';";
+    $query = "SELECT DISTINCT comment_ID FROM Comments_card WHERE card_ID='$card';";
     $statement = $db->prepare($query);
     $statement->execute();
 
@@ -183,7 +183,7 @@ function getComment($ID)
 {
     global $db;
 
-    $query = "SELECT DISTINCT comments FROM Comments_user WHERE comment_ID='$ID';";
+    $query = "SELECT comment FROM Comments_user WHERE comment_ID='$ID';";
     $statement = $db->prepare($query);
     $statement->execute();
 
@@ -198,7 +198,7 @@ function getName($ID)
 {
     global $db;
 
-    $query = "SELECT DISTINCT username FROM Users JOIN Comments_user WHERE user_ID='$ID';";
+    $query = "SELECT username FROM Users JOIN Comments_user on Users.user_ID = Comments_user.user_ID WHERE comment_ID='$ID';";
     $statement = $db->prepare($query);
     $statement->execute();
 
