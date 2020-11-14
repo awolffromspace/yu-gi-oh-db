@@ -29,7 +29,7 @@ if (isset($_SESSION['user']))
     <body>
         <?php
             include('header.php');
-            include('models/cardSearch.php');
+            include('model/cardSearch.php');
             $card_ID = $_SESSION['search_card_ID'];
             $name = $_SESSION['search_name'];
             $type = $_SESSION['search_type'];
