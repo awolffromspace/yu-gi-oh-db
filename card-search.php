@@ -147,7 +147,7 @@ if (isset($_SESSION['user']))
 //close bracket from the "if" from before
 }
 else{   // not logged in yet
-	header('Location: login.php');  // redirect to the login page
+	//header('Location: login.php');  // redirect to the login page
 }
 ?>
 
