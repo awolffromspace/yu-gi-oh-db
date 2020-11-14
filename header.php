@@ -5,7 +5,7 @@
                 <ul class="nav">
                     <li><a href="profile.php"></i>Home Page</a></li>
                     <li><a href="settings.php"></i>Settings</a></li>
-                    <li><a href="cardsearch.php"></i>Search Cards</a></li>
+                    <li><a href="card-search.php"></i>Search Cards</a></li>
                     <li><a href="logout.php"></i>Log Out</a></li>
                 </ul>
             </nav>
