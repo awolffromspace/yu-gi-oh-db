@@ -21,16 +21,13 @@
 
 <!--checks to see if the user is logged in-->
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-header('Location: profile.php');
 session_start();
 if (isset($_SESSION['user']))
 {
 ?>
  
     <body>
-		<?php include('header.php'); ?>
+		<?php include('header.php'); error_reporting(E_ALL); ini_set('display_errors', TRUE); header('Location: profile.php');?>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
             <div class="form-row">
                 <div class="form-group col-md-4">
