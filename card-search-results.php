@@ -41,38 +41,41 @@ if (isset($_SESSION['user']))
             $card_desc = $_SESSION['search_card_desc'];
             $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
         ?>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Card ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Race</th>
-                    <th scope="col">Attribute</th>
-                    <th scope="col">Level</th>
-                    <th scope="col">ATK</th>
-                    <th scope="col">DEF</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($cards as $card) { ?>
+        <div class="container">
+            <h2>Card Search Results</h2>
+            <table class="table">
+                <thead>
                     <tr>
-                        <th scope="row"><img src="<?php echo $card['image_URL']; ?>" style="max-height: 200px;"></th>
-                        <td><?php echo $card['card_ID']; ?></td>
-                        <td><?php echo $card['name']; ?></td>
-                        <td><?php echo $card['type']; ?></td>
-                        <td><?php echo $card['race']; ?></td>
-                        <td><?php echo $card['card_attribute']; ?></td>
-                        <td><?php echo $card['level']; ?></td>
-                        <td><?php echo $card['atk']; ?></td>
-                        <td><?php echo $card['def']; ?></td>
-                        <td><?php echo $card['card_desc']; ?></td>
+                        <th scope="col">Image</th>
+                        <th scope="col">Card ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Race</th>
+                        <th scope="col">Attribute</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">ATK</th>
+                        <th scope="col">DEF</th>
+                        <th scope="col">Description</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($cards as $card) { ?>
+                        <tr>
+                            <th scope="row"><img src="<?php echo $card['image_URL']; ?>" style="max-height: 200px;"></th>
+                            <td><?php echo $card['card_ID']; ?></td>
+                            <td><?php echo $card['name']; ?></td>
+                            <td><?php echo $card['type']; ?></td>
+                            <td><?php echo $card['race']; ?></td>
+                            <td><?php echo $card['card_attribute']; ?></td>
+                            <td><?php echo $card['level']; ?></td>
+                            <td><?php echo $card['atk']; ?></td>
+                            <td><?php echo $card['def']; ?></td>
+                            <td><?php echo $card['card_desc']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
 
 <?php
 //close bracket from the "if" from before

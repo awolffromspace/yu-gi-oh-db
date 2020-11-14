@@ -29,104 +29,107 @@ if (isset($_SESSION['user']))
 
     <body>
         <?php include('header.php'); ?>
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="card_ID">Card ID</label>
-                    <input type="text" class="form-control" id="card_ID" name="card_ID" value="">
+        <div class="container">
+            <h2>Card Search</h2>
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="card_ID">Card ID</label>
+                        <input type="text" class="form-control" id="card_ID" name="card_ID" value="">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="type">Type</label>
+                        <select class="form-control" id="type" name="type">
+                            <option value="" selected hidden>Any</option>
+                            <option>Effect Monster</option>
+                            <option>Flip Effect Monster</option>
+                            <option>Fusion Monster</option>
+                            <option>Normal Monster</option>
+                            <option>Spell Card</option>
+                            <option>Trap Card</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="race">Race</label>
+                        <select class="form-control" id="race" name="race">
+                            <option value="" selected hidden>Any</option>
+                            <option>Aqua</option>
+                            <option>Beast</option>
+                            <option>Beast-Warrior</option>
+                            <option>Continuous</option>
+                            <option>Dinosaur</option>
+                            <option>Dragon</option>
+                            <option>Equip</option>
+                            <option>Fairy</option>
+                            <option>Field</option>
+                            <option>Fiend</option>
+                            <option>Fish</option>
+                            <option>Insect</option>
+                            <option>Machine</option>
+                            <option>Normal</option>
+                            <option>Plant</option>
+                            <option>Pyro</option>
+                            <option>Reptile</option>
+                            <option>Rock</option>
+                            <option>Sea Serpent</option>
+                            <option>Spellcaster</option>
+                            <option>Thunder</option>
+                            <option>Warrior</option>
+                            <option>Winged Beast</option>
+                            <option>Zombie</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="card_attribute">Attribute</label>
+                        <select class="form-control" id="card_attribute" name="card_attribute">
+                            <option value="" selected hidden>Any</option>
+                            <option>DARK</option>
+                            <option>EARTH</option>
+                            <option>FIRE</option>
+                            <option>LIGHT</option>
+                            <option>WATER</option>
+                            <option>WIND</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="level">Level</label>
+                        <select class="form-control" id="level" name="level">
+                            <option value="" selected hidden>Any</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="type">Type</label>
-                    <select class="form-control" id="type" name="type">
-                        <option value="" selected hidden>Any</option>
-                        <option>Effect Monster</option>
-                        <option>Flip Effect Monster</option>
-                        <option>Fusion Monster</option>
-                        <option>Normal Monster</option>
-                        <option>Spell Card</option>
-                        <option>Trap Card</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="atk">ATK</label>
+                        <input type="text" class="form-control" id="atk" name="atk" value="">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="def">DEF</label>
+                        <input type="text" class="form-control" id="def" name="def" value="">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="card_desc">Description</label>
+                        <input type="text" class="form-control" id="card_desc" name="card_desc" value="">
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="race">Race</label>
-                    <select class="form-control" id="race" name="race">
-                        <option value="" selected hidden>Any</option>
-                        <option>Aqua</option>
-                        <option>Beast</option>
-                        <option>Beast-Warrior</option>
-                        <option>Continuous</option>
-                        <option>Dinosaur</option>
-                        <option>Dragon</option>
-                        <option>Equip</option>
-                        <option>Fairy</option>
-                        <option>Field</option>
-                        <option>Fiend</option>
-                        <option>Fish</option>
-                        <option>Insect</option>
-                        <option>Machine</option>
-                        <option>Normal</option>
-                        <option>Plant</option>
-                        <option>Pyro</option>
-                        <option>Reptile</option>
-                        <option>Rock</option>
-                        <option>Sea Serpent</option>
-                        <option>Spellcaster</option>
-                        <option>Thunder</option>
-                        <option>Warrior</option>
-                        <option>Winged Beast</option>
-                        <option>Zombie</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="card_attribute">Attribute</label>
-                    <select class="form-control" id="card_attribute" name="card_attribute">
-                        <option value="" selected hidden>Any</option>
-                        <option>DARK</option>
-                        <option>EARTH</option>
-                        <option>FIRE</option>
-                        <option>LIGHT</option>
-                        <option>WATER</option>
-                        <option>WIND</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="level">Level</label>
-                    <select class="form-control" id="level" name="level">
-                        <option value="" selected hidden>Any</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="atk">ATK</label>
-                    <input type="text" class="form-control" id="atk" name="atk" value="">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="def">DEF</label>
-                    <input type="text" class="form-control" id="def" name="def" value="">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="card_desc">Description</label>
-                    <input type="text" class="form-control" id="card_desc" name="card_desc" value="">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-dark">Search</button>
-        </form>
+                <button type="submit" class="btn btn-dark">Search</button>
+            </form>
+        </div>
 
         <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
