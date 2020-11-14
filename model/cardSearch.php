@@ -51,6 +51,8 @@
             $query = $query." AND card_desc LIKE :card_desc";
         }
 
+        echo $query;
+
         $statement = $db->prepare($query);
 
         if ($card_ID != "") {
