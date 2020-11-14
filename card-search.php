@@ -129,16 +129,15 @@ if (isset($_SESSION['user']))
 
         <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
-                $_SESSION['search_name'] = trim($_POST['name']);
-                $_SESSION['search_type'] = trim($_POST['type']);
-                $_SESSION['search_race'] = trim($_POST['race']);
-                $_SESSION['search_card_attribute'] = trim($_POST['card_attribute']);
-                $_SESSION['search_level'] = trim($_POST['level']);
-                $_SESSION['search_atk'] = trim($_POST['atk']);
-                $_SESSION['search_atk'] = trim($_POST['atk']);
-                $_SESSION['search_def'] = trim($_POST['def']);
-                $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
+                // $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
+                // $_SESSION['search_name'] = trim($_POST['name']);
+                // $_SESSION['search_type'] = trim($_POST['type']);
+                // $_SESSION['search_race'] = trim($_POST['race']);
+                // $_SESSION['search_card_attribute'] = trim($_POST['card_attribute']);
+                // $_SESSION['search_level'] = trim($_POST['level']);
+                // $_SESSION['search_atk'] = trim($_POST['atk']);
+                // $_SESSION['search_def'] = trim($_POST['def']);
+                // $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
                 header('Location: profile.php');
             }
         ?>
