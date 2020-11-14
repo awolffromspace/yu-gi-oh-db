@@ -40,12 +40,38 @@ if (isset($_SESSION['user']))
             $def = $_SESSION['search_def'];
             $card_desc = $_SESSION['search_card_desc'];
             $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
-            foreach ($cards as $card) {
-                echo "<p>";
-                echo $card['name'];
-                echo "</p>";
-            }
         ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Card ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Race</th>
+                    <th scope="col">Card Attribute</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">ATK</th>
+                    <th scope="col">DEF</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cards as $card) { ?>
+                    <tr>
+                        <th scope="row"><?php $card['card_ID'] ?></th>
+                        <td><?php $card['name'] ?></td>
+                        <td><?php $card['type'] ?></td>
+                        <td><?php $card['race'] ?></td>
+                        <td><?php $card['card_attribute'] ?></td>
+                        <td><?php $card['level'] ?></td>
+                        <td><?php $card['atk'] ?></td>
+                        <td><?php $card['def'] ?></td>
+                        <td><?php $card['card_desc'] ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+
 <?php
 //close bracket from the "if" from before
 }
