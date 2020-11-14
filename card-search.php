@@ -27,7 +27,7 @@ if (isset($_SESSION['user']))
 ?>
  
     <body>
-		<?php include('header.php'); error_reporting(E_ALL); ini_set('display_errors', TRUE); header('Location: profile.php');?>
+		<?php include('header.php'); ?>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -128,6 +128,9 @@ if (isset($_SESSION['user']))
         </form>
 
         <?php
+            error_reporting(E_ALL);
+            ini_set('display_errors', TRUE);
+            header('Location: profile.php');
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
                 $_SESSION['search_name'] = trim($_POST['name']);
