@@ -18,8 +18,8 @@
 /******************************/
 // connecting to DB on XAMPP (local)
 
-$username = 'rad7eu_login';
-$password = 'TheSecurestPassword96!';
+$username = 'rad7eu_prelogin';
+$password = 'SuperSecurePassword96!';
 $host = 'usersrv01.cs.virginia.edu';
 $dbname = 'rad7eu_yugioh';
 

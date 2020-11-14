@@ -4,7 +4,7 @@
     /** Authenticates the login form by checking for the given username and password in the database */
     function authenticate($user, $pwd, $email) {
 
-        require('connectdb.php');
+        require('connectdb_pre.php');
 		
         // make sure the username is not already in use
         $query = "SELECT * FROM `Users` WHERE `username`=:user AND `pswd`=pswd";

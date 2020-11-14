@@ -7,7 +7,7 @@
         if(!ctype_alnum($user) || !ctype_alnum($pwd))
             return false;
 
-        require('connectdb.php');
+        require('connectdb_pre.php');
         $hashPwd = md5($pwd); // hash the password
         // :user and :pwd are bound to the variables down below
         $query = "SELECT * FROM `Users` WHERE `username`=:user AND `pswd`=:pwd";
