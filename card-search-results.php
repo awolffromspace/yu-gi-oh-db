@@ -41,7 +41,7 @@ if (isset($_SESSION['user']))
             $card_desc = $_SESSION['search_card_desc'];
             $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
         ?>
-        <div class="container">
+        <div class="container" style="margin-top: 10px;">
             <h2>Card Search Results</h2>
             <table class="table">
                 <thead>
