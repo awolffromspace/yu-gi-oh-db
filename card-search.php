@@ -7,13 +7,13 @@
         <meta name="author" content="Rowan Dakota"/>
 
         <title>Yu-Gi-Oh! Database</title>
-		<link rel="icon" href="images/logo.png"/>
-		
-		<!-- CSS -->
+        <link rel="icon" href="images/logo.png"/>
+
+        <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="styles/style.css"/>
-		<link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
         <!-- Font awesome is used for the icons (<i> elements) and requires this line-->
         <script src="https://kit.fontawesome.com/245f30a0ca.js" crossorigin="anonymous"></script>
    
@@ -25,9 +25,9 @@ session_start();
 if (isset($_SESSION['user']))
 {
 ?>
- 
+
     <body>
-		<?php include('header.php'); ?>
+        <?php include('header.php'); ?>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -126,6 +126,7 @@ if (isset($_SESSION['user']))
             </div>
             <button type="submit" class="btn btn-dark">Search</button>
         </form>
+
         <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
@@ -146,9 +147,9 @@ if (isset($_SESSION['user']))
 //close bracket from the "if" from before
 }
 else{   // not logged in yet
-	header('Location: login.php');  // redirect to the login page
+    header('Location: login.php');  // redirect to the login page
 }
 ?>
 
-	</body>
+    </body>
 </html>
