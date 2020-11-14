@@ -15,7 +15,16 @@
         $statement->bindValue(':def', $def);
         $statement->bindValue(':card_desc', $card_desc);
 
-        echo $statement;
+        echo $query;
+        echo $card_ID;
+        echo $name;
+        echo $type;
+        echo $race;
+        echo $card_attribute;
+        echo $level;
+        echo $atk;
+        echo $def;
+        echo $card_desc;
 
         $statement->execute();
 
