@@ -59,7 +59,7 @@ if (isset($_SESSION['user']))
             <tbody>
                 <?php foreach ($cards as $card) { ?>
                     <tr>
-                        <th scope="row"><img src="<?php echo $card['image_URL']; ?>" style="max-height: 100px;"></th>
+                        <th scope="row"><img src="<?php echo $card['image_URL']; ?>" style="max-height: 200px;"></th>
                         <td><?php echo $card['card_ID']; ?></td>
                         <td><?php echo $card['name']; ?></td>
                         <td><?php echo $card['type']; ?></td>
