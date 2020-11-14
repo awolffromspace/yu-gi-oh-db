@@ -42,14 +42,15 @@ if (isset($_SESSION['user']))
             if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
                 if (!empty($_POST['action']) && ($_POST['action']=='Post')){
-                        commentUser($_POST['comment'], $userID);
                         commentCard($_POST['comment'], $ID);
+                        commentUser($_POST['comment'], $userID);
+                        $commentID = getAllComments($ID);
                     }
                 }
         ?>
 <br>
         <!-- <form action="formprocessing.php" method="post">  -->
-<form action='profile.php?view=111111'.$ID method="post" style="width: 80%; margin-left:110px">
+<form action="cardimage.php?view=<?=$ID?>" method="post" style="width: 80%; margin-left:110px">
 <?php
 $image = 'https://storage.googleapis.com/ygoprodeck.com/pics/'. $ID .'.jpg';
 $imageData = base64_encode(file_get_contents($image));
@@ -61,7 +62,6 @@ echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
   </div>
   <br>
   <input type="submit" value="Post" name="action" class="btn btn-dark" title="Insert a friend into a friends table" />
-  <?php if(isset($_POST['ID'])) $ID=$_POST['ID'];?>
 </form>
 
         <br>
@@ -82,13 +82,13 @@ echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
              <td><?php
                $user = getName($item['comment_ID']);
                foreach($user as $result) {
-                echo $result['username'], ',<br>';
+                echo $result['username'], '<br>';
                }
                ?></td>
                <td><?php
                $comm = getComment($item['comment_ID']);
                foreach($comm as $result) {
-               echo $comm['comments'], ',<br>';
+               echo $result['comment'], '<br>';
                }
                ?></td>
             </tr>
