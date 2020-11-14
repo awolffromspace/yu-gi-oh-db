@@ -40,7 +40,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="type">Type</label>
-                    <select class="form-control" id="type">
+                    <select class="form-control" id="type" name="type">
                         <option value="type" selected hidden>Any</option>
                         <option>Effect Monster</option>
                         <option>Flip Effect Monster</option>
@@ -54,7 +54,7 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="race">Race</label>
-                    <select class="form-control" id="race" name="race" value="race">
+                    <select class="form-control" id="race" name="race">
                         <option value="race" selected hidden>Any</option>
                         <option>Aqua</option>
                         <option>Beast</option>
@@ -80,7 +80,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="card_attribute">Attribute</label>
-                    <select class="form-control" id="card_attribute" name="card_attribute" value="card_attribute">
+                    <select class="form-control" id="card_attribute" name="card_attribute">
                         <option value="card_attribute" selected hidden>Any</option>
                         <option>DARK</option>
                         <option>EARTH</option>
@@ -92,7 +92,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="level">Level</label>
-                    <select class="form-control" id="level" name="level" value="level">
+                    <select class="form-control" id="level" name="level">
                         <option value="level" selected hidden>Any</option>
                         <option>1</option>
                         <option>2</option>
