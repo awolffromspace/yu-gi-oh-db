@@ -18,8 +18,8 @@
 /******************************/
 // connecting to DB on XAMPP (local)
 
-$username = 'rad7eu_login';
-$password = 'TheSecurestPassword96!';
+$username = 'rad7eu';
+$password = 'BlueDragon96!';
 $host = 'usersrv01.cs.virginia.edu';
 $dbname = 'rad7eu_yugioh';
 
@@ -42,6 +42,7 @@ $db = "";
 try 
 {
    $db = new PDO($dsn, $username, $password);
+   echo "";
 }
 catch (PDOException $e)     // handle a PDO exception (errors thrown by the PDO library)
 {
