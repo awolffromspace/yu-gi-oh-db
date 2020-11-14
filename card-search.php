@@ -139,9 +139,7 @@ if (isset($_SESSION['user']))
                 $_SESSION['search_atk'] = trim($_POST['atk']);
                 $_SESSION['search_def'] = trim($_POST['def']);
                 $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
-                error_reporting(E_ALL);
-                ini_set('display_errors', TRUE);
-                header('Location: profile.php');
+                header('Location: card-search-results.php');
                 ob_end_flush();
             }
         ?>
