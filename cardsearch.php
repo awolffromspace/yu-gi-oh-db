@@ -59,13 +59,17 @@ if (isset($_SESSION['user']))
                         <option>Aqua</option>
                         <option>Beast</option>
                         <option>Beast-Warrior</option>
+                        <option>Continuous</option>
                         <option>Dinosaur</option>
                         <option>Dragon</option>
+                        <option>Equip</option>
                         <option>Fairy</option>
+                        <option>Field</option>
                         <option>Fiend</option>
                         <option>Fish</option>
                         <option>Insect</option>
                         <option>Machine</option>
+                        <option>Normal</option>
                         <option>Plant</option>
                         <option>Pyro</option>
                         <option>Reptile</option>

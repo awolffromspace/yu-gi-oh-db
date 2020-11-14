@@ -23,25 +23,27 @@
         } else {
             $query = $query." AND race=:race";
         }
-        if ($card_attribute == "") {
-            $query = $query." AND card_attribute=card_attribute";
-        } else {
-            $query = $query." AND card_attribute=:card_attribute";
-        }
-        if ($level == "") {
-            $query = $query." AND level=level";
-        } else {
-            $query = $query." AND level=:level";
-        }
-        if ($atk == "") {
-            $query = $query." AND atk=atk";
-        } else {
-            $query = $query." AND atk=:atk";
-        }
-        if ($def == "") {
-            $query = $query." AND def=def";
-        } else {
-            $query = $query." AND def=:def";
+        if ($card_attribute != "" && $level != "" && $atk != "" && $def != "") {
+            if ($card_attribute == "") {
+                $query = $query." AND card_attribute=card_attribute";
+            } else {
+                $query = $query." AND card_attribute=:card_attribute";
+            }
+            if ($level == "") {
+                $query = $query." AND level=level";
+            } else {
+                $query = $query." AND level=:level";
+            }
+            if ($atk == "") {
+                $query = $query." AND atk=atk";
+            } else {
+                $query = $query." AND atk=:atk";
+            }
+            if ($def == "") {
+                $query = $query." AND def=def";
+            } else {
+                $query = $query." AND def=:def";
+            }
         }
         if ($card_desc == "") {
             $query = $query." AND card_desc=card_desc";
