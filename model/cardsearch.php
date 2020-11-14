@@ -17,7 +17,7 @@
 
         echo $query;
         echo $card_ID;
-        echo is_numeric($card_ID)
+        echo is_numeric($card_ID);
         echo $name;
         echo $type;
         echo $race;
