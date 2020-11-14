@@ -126,8 +126,7 @@ if (isset($_SESSION['user']))
             </div>
             <button type="submit" class="btn btn-dark">Search</button>
         </form>
-
-        <?php
+<?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
                 $_SESSION['search_name'] = trim($_POST['name']);
@@ -142,7 +141,7 @@ if (isset($_SESSION['user']))
                 ini_set('display_errors', TRUE);
                 header('Location: profile.php');
             }
-        ?>
+?>
 <?php
 //close bracket from the "if" from before
 }
