@@ -58,15 +58,15 @@ if (isset($_SESSION['user']))
             <tbody>
                 <?php foreach ($cards as $card) { ?>
                     <tr>
-                        <th scope="row"><?php $card['card_ID'] ?></th>
-                        <td><?php $card['name'] ?></td>
-                        <td><?php $card['type'] ?></td>
-                        <td><?php $card['race'] ?></td>
-                        <td><?php $card['card_attribute'] ?></td>
-                        <td><?php $card['level'] ?></td>
-                        <td><?php $card['atk'] ?></td>
-                        <td><?php $card['def'] ?></td>
-                        <td><?php $card['card_desc'] ?></td>
+                        <th scope="row"><?php echo $card['card_ID']; ?></th>
+                        <td><?php echo $card['name']; ?></td>
+                        <td><?php echo $card['type']; ?></td>
+                        <td><?php echo $card['race']; ?></td>
+                        <td><?php echo $card['card_attribute']; ?></td>
+                        <td><?php echo $card['level']; ?></td>
+                        <td><?php echo $card['atk']; ?></td>
+                        <td><?php echo $card['def']; ?></td>
+                        <td><?php echo $card['card_desc']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
