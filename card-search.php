@@ -140,7 +140,7 @@ if (isset($_SESSION['user']))
                 $_SESSION['search_atk'] = trim($_POST['atk']);
                 $_SESSION['search_def'] = trim($_POST['def']);
                 $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
-                header('Location: cardsearchresults.php');
+                header('Location: profile.php');
             }
         ?>
 <?php
