@@ -23,7 +23,7 @@
         } else {
             $query = $query." AND race=:race";
         }
-        if ($card_attribute != "" && $level != "" && $atk != "" && $def != "") {
+        if ($card_attribute != "" || $level != "" || $atk != "" || $def != "") {
             if ($card_attribute == "") {
                 $query = $query." AND card_attribute=card_attribute";
             } else {
