@@ -1,7 +1,7 @@
 <?php
     function cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc) {
         require('connectdb.php');
-        $query = "SELECT * FROM Cards NATURAL JOIN Card_name NATURAL JOIN Card_image NATURAL LEFT JOIN Monster WHERE card_ID=:card_ID";
+        $query = "SELECT * FROM Cards NATURAL JOIN Card_name NATURAL JOIN Card_image NATURAL LEFT JOIN Monster WHERE name=:name";
 
         $statement = $db->prepare($query);
 
