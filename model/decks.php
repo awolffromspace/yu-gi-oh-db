@@ -116,4 +116,96 @@ function getNewDeckID()
     return $results;
 }
 
+function getAllCardID(&$string)
+{
+    global $db;
+    $query = "SELECT card_ID FROM Decks WHERE name='$string';";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+
+    $statement->closeCursor();
+
+    return $results;
+}
+
+function getNewCommentID()
+{
+    global $db;
+    $query = "SELECT MAX(comment_ID) comment_ID FROM Comments_card;";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+
+    $statement->closeCursor();
+
+    return $results;
+}
+
+function commentUser(&$comment, $user)
+{
+	global $db;
+	$commentID=getNewCommentID()[0]['comment_ID']+1;
+    $query = "INSERT INTO Comments_user (user_ID, comment_ID, comment) VALUES($user, $commentID, '$comment');";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function commentCard(&$comment, $card)
+{
+	global $db;
+	$commentID=getNewCommentID()[0]['comment_ID'];
+    $query = "INSERT INTO Comments_card (card_ID, comment_ID, comment) VALUES($card, $commentID, '$comment');";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function getAllComments($card)
+{
+    global $db;
+
+    $query = "SELECT * FROM Comments_card WHERE card_ID='$card';";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+
+    $statement->closeCursor();
+
+    return $results;
+}
+
+function getComment($ID)
+{
+    global $db;
+
+    $query = "SELECT DISTINCT comments FROM Comments_user WHERE comment_ID='$ID';";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+
+    $statement->closeCursor();
+
+    return $results;
+}
+
+function getName($ID)
+{
+    global $db;
+
+    $query = "SELECT DISTINCT username FROM Users JOIN Comments_user WHERE user_ID='$ID';";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+
+    $statement->closeCursor();
+
+    return $results;
+}
 ?>
