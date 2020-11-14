@@ -44,11 +44,12 @@ if (isset($_SESSION['user']))
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Image</th>
                     <th scope="col">Card ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Type</th>
                     <th scope="col">Race</th>
-                    <th scope="col">Card Attribute</th>
+                    <th scope="col">Attribute</th>
                     <th scope="col">Level</th>
                     <th scope="col">ATK</th>
                     <th scope="col">DEF</th>
@@ -58,7 +59,8 @@ if (isset($_SESSION['user']))
             <tbody>
                 <?php foreach ($cards as $card) { ?>
                     <tr>
-                        <th scope="row"><?php echo $card['card_ID']; ?></th>
+                        <th scope="row"><img src="<?php echo $card['image_URL']; ?>" style="max-height: 100px;"></th>
+                        <td><?php echo $card['card_ID']; ?></td>
                         <td><?php echo $card['name']; ?></td>
                         <td><?php echo $card['type']; ?></td>
                         <td><?php echo $card['race']; ?></td>
