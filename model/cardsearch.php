@@ -13,7 +13,7 @@
         } else {
             $query = $query." AND name=:name";
         }
-        if ($card_type == "type") {
+        if ($card_type == "card_type") {
             $query = $query." AND type=type";
         } else {
             $query = $query." AND type=:type";
