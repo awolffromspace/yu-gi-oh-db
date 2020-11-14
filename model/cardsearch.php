@@ -11,7 +11,7 @@
         if ($name == "name") {
             $query = $query." AND name=name";
         } else {
-            $query = $query." AND name=:name";
+            $query = $query." AND name=':name'";
         }
         if ($type == "type") {
             $query = $query." AND type=type";
