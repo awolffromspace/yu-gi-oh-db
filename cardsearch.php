@@ -124,27 +124,23 @@ if (isset($_SESSION['user']))
                     <input type="text" class="form-control" id="card_desc" name="card_desc" value="">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-dark">Search</button>
         </form>
 
         <?php
             include('model/cardsearch.php');
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $card_ID = trim($_POST['card_ID']);
-                $name = trim($_POST['name']);
-                $type = trim($_POST['type']);
-                $race = trim($_POST['race']);
-                $card_attribute = trim($_POST['card_attribute']);
-                $level = trim($_POST['level']);
-                $atk = trim($_POST['atk']);
-                $def = trim($_POST['def']);
-                $card_desc = trim($_POST['card_desc']);
-                $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
-                foreach ($cards as $card) {
-                    echo "<p>";
-                    echo $card['name'];
-                    echo "</p>";
-                }
+                $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
+                $_SESSION['search_name'] = trim($_POST['name']);
+                $_SESSION['search_type'] = trim($_POST['type']);
+                $_SESSION['search_race'] = trim($_POST['race']);
+                $_SESSION['search_card_attribute'] = trim($_POST['card_attribute']);
+                $_SESSION['search_level'] = trim($_POST['level']);
+                $_SESSION['search_atk'] = trim($_POST['atk']);
+                $_SESSION['search_atk'] = trim($_POST['atk']);
+                $_SESSION['search_def'] = trim($_POST['def']);
+                $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
+                header('Location: cardsearchresults.php');
             }
         ?>
 <?php
