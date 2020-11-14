@@ -31,12 +31,12 @@ if (isset($_SESSION['user']))
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="cardID">Card ID</label>
-                    <input type="text" class="form-control" id="cardID" name="cardID" placeholder="">
+                    <label for="card_ID">Card ID</label>
+                    <input type="text" class="form-control" id="card_ID" name="card_ID" value="card_ID">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name">
+                    <input type="text" class="form-control" id="name" name="name" value="name">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="type">Type</label>
@@ -53,7 +53,7 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="race">Race</label>
-                    <select class="form-control" id="race" name="race">
+                    <select class="form-control" id="race" name="race" value="race">
                         <option>Aqua</option>
                         <option>Beast</option>
                         <option>Beast-Warrior</option>
@@ -77,8 +77,8 @@ if (isset($_SESSION['user']))
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="attribute">Attribute</label>
-                    <select class="form-control" id="attribute" name="attribute">
+                    <label for="card_attribute">Attribute</label>
+                    <select class="form-control" id="card_attribute" name="card_attribute" value="card_attribute">
                         <option>DARK</option>
                         <option>EARTH</option>
                         <option>FIRE</option>
@@ -89,7 +89,7 @@ if (isset($_SESSION['user']))
                 </div>
                 <div class="form-group col-md-4">
                     <label for="level">Level</label>
-                    <select class="form-control" id="level" name="level">
+                    <select class="form-control" id="level" name="level" value="level">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -105,15 +105,15 @@ if (isset($_SESSION['user']))
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="atk">ATK</label>
-                    <input type="text" class="form-control" id="atk" name="atk" placeholder="">
+                    <input type="text" class="form-control" id="atk" name="atk" value="atk">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="def">DEF</label>
-                    <input type="text" class="form-control" id="def" name="def" placeholder="">
+                    <input type="text" class="form-control" id="def" name="def" value="def">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="cardDesc">Description</label>
-                    <input type="text" class="form-control" id="cardDesc" name="cardDesc" placeholder="">
+                    <label for="card_desc">Description</label>
+                    <input type="text" class="form-control" id="card_desc" name="card_desc" value="card_desc">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
@@ -122,16 +122,16 @@ if (isset($_SESSION['user']))
         <?php
             include('model/cardsearch.php');
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $cardID = trim($_POST['cardID']);
+                $card_ID = trim($_POST['card_ID']);
                 $name = trim($_POST['name']);
                 $type = trim($_POST['type']);
                 $race = trim($_POST['race']);
-                $attribute = trim($_POST['attribute']);
+                $card_attribute = trim($_POST['card_attribute']);
                 $level = trim($_POST['level']);
                 $atk = trim($_POST['atk']);
                 $def = trim($_POST['def']);
-                $cardDesc = trim($_POST['cardDesc']);
-                $cards = cardSearch($cardID, $name, $type, $race, $attribute, $level, $atk, $def, $cardDesc);
+                $card_desc = trim($_POST['card_desc']);
+                $cards = cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc);
                 foreach ($cards as $card) {
                     echo $card['name'];
                 }
