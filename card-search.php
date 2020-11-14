@@ -20,11 +20,14 @@
     </head>
 
 <!--checks to see if the user is logged in-->
-<!-- <?php
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+header('Location: profile.php');
 session_start();
 if (isset($_SESSION['user']))
 {
-?> -->
+?>
  
     <body>
 		<?php include('header.php'); ?>
@@ -138,18 +141,15 @@ if (isset($_SESSION['user']))
                 $_SESSION['search_atk'] = trim($_POST['atk']);
                 $_SESSION['search_def'] = trim($_POST['def']);
                 $_SESSION['search_card_desc'] = trim($_POST['card_desc']);
-                error_reporting(E_ALL);
-                ini_set('display_errors', TRUE);
-                header('Location: profile.php');
             }
         ?>
-<!-- <?php
+<?php
 //close bracket from the "if" from before
 }
 else{   // not logged in yet
 	header('Location: login.php');  // redirect to the login page
 }
-?> -->
+?>
 
 	</body>
 </html>
