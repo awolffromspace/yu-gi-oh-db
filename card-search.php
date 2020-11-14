@@ -128,7 +128,6 @@ if (isset($_SESSION['user']))
         </form>
 
         <?php
-            include('model/cardSearch.php');
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['search_card_ID'] = trim($_POST['card_ID']);
                 $_SESSION['search_name'] = trim($_POST['name']);
