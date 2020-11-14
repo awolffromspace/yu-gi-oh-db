@@ -1,5 +1,5 @@
 <?php
-    function cardSearch($card_ID, $name, $type, $race, $card_attribute, $level, $atk, $def, $card_desc) {
+    function cardSearch($card_ID, $name, $card_type, $race, $card_attribute, $level, $atk, $def, $card_desc) {
         require('connectdb.php');
         $query = "SELECT * FROM Cards NATURAL JOIN Card_name NATURAL JOIN Card_image NATURAL LEFT JOIN Monster WHERE";
 
@@ -13,7 +13,7 @@
         } else {
             $query = $query." AND name=:name";
         }
-        if ($type == "type") {
+        if ($card_type == "type") {
             $query = $query." AND type=type";
         } else {
             $query = $query." AND type=:type";
