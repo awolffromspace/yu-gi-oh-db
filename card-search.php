@@ -141,7 +141,7 @@ if (isset($_SESSION['user']))
                 ini_set('display_errors', TRUE);
                 header('Location: profile.php');
             }
-?>
+        ?>
 <?php
 //close bracket from the "if" from before
 }
