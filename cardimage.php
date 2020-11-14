@@ -29,9 +29,6 @@ if (isset($_SESSION['user']))
     <body>
 		<?php include('header.php'); ?>
 		<br>
-        <div class="welcome">
-            <h2 style="margin-left: 5%"><?= "Welcome, " . $_SESSION['user'] . "!"; ?></h2>
-        </div>
 
         <?php
             require('model/connectdb.php');
@@ -40,35 +37,31 @@ if (isset($_SESSION['user']))
             $password_pre=$_SESSION['password'];
             $password=md5($password_pre);
             $userID=getUserID($username, $password)[0]['user_ID'];
-            $decks = getAllDecks($userID);
+            $ID = $_GET['view'];
+            $commentID = getAllComments($ID);
             if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
-                if (!empty($_POST['action']) && ($_POST['action']=='Add')){
-                        addCard($_POST['deck'], $_POST['card'], $userID);
-                        $decks = getAllDecks($userID);
-                    }
-                else if (!empty($_POST['action']) && ($_POST['action']=='Delete')){
-                        deleteCard($_POST['deck'], $_POST['card'], $userID);
-                        $decks = getAllDecks($userID);
+                if (!empty($_POST['action']) && ($_POST['action']=='Post')){
+                        commentUser($_POST['comment'], $userID);
+                        commentCard($_POST['comment'], $ID);
                     }
                 }
         ?>
 <br>
         <!-- <form action="formprocessing.php" method="post">  -->
-<form name="mainForm" action="profile.php" method="post" style="width: 80%; margin-left:110px">
-    <h2>Card Deck Creator/Editor</h2>
+<form action='profile.php?view=111111'.$ID method="post" style="width: 80%; margin-left:110px">
+<?php
+$image = 'https://storage.googleapis.com/ygoprodeck.com/pics/'. $ID .'.jpg';
+$imageData = base64_encode(file_get_contents($image));
+echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
+?>
   <div class="form-group">
-    Name of Deck (New or Existing):
-    <input type="int" class="form-control" name="deck" required
-  </div>
-  <div class="form-group">
-    Card ID (From Card Reference Page):
-    <input type="int" class="form-control" name="card" required
+    
+    <input type="string" class="form-control" name="comment" required
   </div>
   <br>
-  <input type="submit" value="Add" name="action" class="btn btn-dark" title="Insert a friend into a friends table" />
-  <input type="submit" value="Delete" name="action" class="btn btn-dark" title="Confirm update a friend" />
-
+  <input type="submit" value="Post" name="action" class="btn btn-dark" title="Insert a friend into a friends table" />
+  <?php if(isset($_POST['ID'])) $ID=$_POST['ID'];?>
 </form>
 
         <br>
@@ -76,32 +69,27 @@ if (isset($_SESSION['user']))
         <br>
         <br>
         <div class="container" style="max-height: 300px; overflow:scroll">
-            <h2>List of Decks</h2>
+            <h2>Comments</h2>
                 <table class="w3-table w3-bordered w3-card-4 center" style="width:60%; max-height:10px; overflow:scroll">
             <thead>
             <tr style="background-color:#B0B0B0">
              <th width="20%">Name</th>
-             <th width="40%">View Deck</th>
-             <th width="20%">Image</th>
+             <th width="40%">Comments</th>
              </tr>
              </thead>
-            <?php foreach ($decks as $item): ?>
+            <?php foreach ($commentID as $item): ?>
              <tr>
-              <td><?php echo $item['name']; ?></td>
-               <td><?php
-               $cards = getAllCards($item['name']);
-               foreach($cards as $result) {
-                 echo $result['name'], ',<br>';
-                }
+             <td><?php
+               $user = getName($item['comment_ID']);
+               foreach($user as $result) {
+                echo $result['username'], ',<br>';
+               }
                ?></td>
                <td><?php
-               $smallImg = getAllCardID($item['name']);
-               foreach($smallImg as $result) {
-                $image = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/'. $result['card_ID'] .'.jpg';
-                $imageData = base64_encode(file_get_contents($image));
-                $ID = $result['card_ID'];
-                echo '<a href="cardimage.php?view='.$ID.'" onclick="post"><img src="data:image/jpeg;base64,'.$imageData.'">';
-                }
+               $comm = getComment($item['comment_ID']);
+               foreach($comm as $result) {
+               echo $comm['comments'], ',<br>';
+               }
                ?></td>
             </tr>
             <?php endforeach; ?>
