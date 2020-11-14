@@ -75,7 +75,7 @@
 				if($authorized){
 					echo "<div style='text-align: center;' class='bg-success text-white'>You've successfully registered</div>";
 				}
-				//either the username is in use or it has non-alphanumeric characters
+				//The username is in use
 				else{
 					echo "<div style='text-align: center;' class='bg-danger text-white'>That username is invalid. Please try another</div>";
 				}

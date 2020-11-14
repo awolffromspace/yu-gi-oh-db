@@ -53,21 +53,8 @@
 		
 		<?php
 			include('model/loginFormHandler.php'); // authenticate function
-			// The isset makes sure that there is something in the text fields
-			/*
-			if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
-				$username = trim($_COOKIE['username']);
-				$password = trim($_COOKIE['password']);
-				$authorized = authenticate($username, $password);
-				if($authorized) {
-					session_start();
-					$_SESSION['user'] = $username;
-				}
-				else
-					echo "<div style='text-align: center;' class='bg-danger text-white'>The username or password is incorrect</div>";
-			}
-
-			else */ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {	
+			
+			if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {	
 				$username = trim($_POST['username']);
 				$password = trim($_POST['password']);
 				$authorized = authenticate($username, $password);
