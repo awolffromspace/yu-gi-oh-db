@@ -42,7 +42,6 @@ $db = "";
 try 
 {
    $db = new PDO($dsn, $username, $password);
-   echo "";
 }
 catch (PDOException $e)     // handle a PDO exception (errors thrown by the PDO library)
 {
