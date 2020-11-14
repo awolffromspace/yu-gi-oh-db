@@ -11,7 +11,7 @@
         if ($name == "") {
             $query = $query." AND name=name";
         } else {
-            $query = $query." AND name=:name";
+            $query = $query." AND name LIKE :name";
         }
         if ($type == "") {
             $query = $query." AND type=type";
@@ -46,7 +46,7 @@
         if ($card_desc == "") {
             $query = $query." AND card_desc=card_desc";
         } else {
-            $query = $query." AND card_desc=:card_desc";
+            $query = $query." AND card_desc LIKE :card_desc";
         }
 
         $statement = $db->prepare($query);
@@ -55,7 +55,7 @@
             $statement->bindValue(':card_ID', intval($card_ID), PDO::PARAM_INT);
         }
         if ($name != "") {
-            $statement->bindValue(':name', $name, PDO::PARAM_STR);
+            $statement->bindValue(':name', "%".$name."%", PDO::PARAM_STR);
         }
         if ($type != "") {
             $statement->bindValue(':type', $type, PDO::PARAM_STR);
@@ -76,7 +76,7 @@
             $statement->bindValue(':def', intval($def), PDO::PARAM_INT);
         }
         if ($card_desc != "") {
-            $statement->bindValue(':card_desc', $card_desc, PDO::PARAM_STR);
+            $statement->bindValue(':card_desc', "%".$card_desc."%", PDO::PARAM_STR);
         }
 
         $statement->execute();
