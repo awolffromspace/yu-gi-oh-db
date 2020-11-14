@@ -29,7 +29,7 @@ if (isset($_SESSION['user']))
 
     <body>
         <?php include('header.php'); ?>
-        <div class="container">
+        <div class="container" style="margin-top: 10px;">
             <h2>Card Search</h2>
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="cardSearch">
                 <div class="form-row">
