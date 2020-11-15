@@ -3,51 +3,33 @@
         require('connectdb.php');
         $query = "SELECT * FROM Cards NATURAL JOIN Card_name NATURAL JOIN Card_image NATURAL LEFT JOIN Monster WHERE";
 
-        if ($card_ID == "") {
-            $query = $query." card_ID=card_ID";
-        } else {
+        if ($card_ID != "") {
             $query = $query." card_ID=:card_ID";
         }
-        if ($name == "") {
-            $query = $query." AND name=name";
-        } else {
+        if ($name != "") {
             $query = $query." AND name LIKE :name";
         }
-        if ($type == "") {
-            $query = $query." AND type=type";
-        } else {
+        if ($type != "") {
             $query = $query." AND type=:type";
         }
-        if ($race == "") {
-            $query = $query." AND race=race";
-        } else {
+        if ($race != "") {
             $query = $query." AND race=:race";
         }
         if ($card_attribute != "" || $level != "" || $atk != "" || $def != "") {
-            if ($card_attribute == "") {
-                $query = $query." AND card_attribute=card_attribute";
-            } else {
+            if ($card_attribute != "") {
                 $query = $query." AND card_attribute=:card_attribute";
             }
-            if ($level == "") {
-                $query = $query." AND level=level";
-            } else {
+            if ($level != "") {
                 $query = $query." AND level=:level";
             }
-            if ($atk == "") {
-                $query = $query." AND atk=atk";
-            } else {
+            if ($atk != "") {
                 $query = $query." AND atk=:atk";
             }
-            if ($def == "") {
-                $query = $query." AND def=def";
-            } else {
+            if ($def != "") {
                 $query = $query." AND def=:def";
             }
         }
-        if ($card_desc == "") {
-            $query = $query." AND card_desc=card_desc";
-        } else {
+        if ($card_desc != "") {
             $query = $query." AND card_desc LIKE :card_desc";
         }
 
