@@ -70,7 +70,7 @@ echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
         <br>
         <div class="container" style="max-height: 300px; overflow:scroll">
             <h2>Comments</h2>
-                <table class="w3-table w3-bordered w3-card-4 center" style="width:60%; max-height:10px; overflow:scroll">
+                <table class="w3-table w3-bordered w3-card-4 center" style="width:100%; max-height:10px; overflow:scroll">
             <thead>
             <tr style="background-color:#B0B0B0">
              <th width="20%">Name</th>
