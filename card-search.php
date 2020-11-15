@@ -122,10 +122,10 @@ if (isset($_SESSION['user']))
                         <label for="def">DEF</label>
                         <input type="text" class="form-control" id="def" name="def" value="">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="card_desc">Description</label>
-                        <input type="text" class="form-control" id="card_desc" name="card_desc" value="">
-                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="card_desc">Description</label>
+                    <textarea class="form-control" id="card_desc" name="card_desc" rows="2"></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark">Search</button>
             </form>
