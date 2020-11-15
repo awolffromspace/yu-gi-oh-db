@@ -123,7 +123,7 @@ if (isset($_SESSION['user']))
                         <input type="text" class="form-control" id="def" name="def" value="">
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label for="card_desc">Description</label>
                     <textarea class="form-control" id="card_desc" name="card_desc" rows="2"></textarea>
                 </div>
